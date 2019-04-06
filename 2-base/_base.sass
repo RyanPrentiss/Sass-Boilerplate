@@ -1,0 +1,106 @@
+//\:root
+\:root
+  +font-p
+  +text-shadow
+  color: $black
+  @include fluid-type($min-screen, $max-screen, $min-font, $max-font)
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+
+::selection
+  background-color: $secondary
+
+body
+  background-color: $white
+  opacity: 0
+  .no-js &
+    opacity: 1
+  &.hello
+    opacity: 1
+    transition: opacity 0.3s ease-out
+
+  h1, h2, h3, h4, h5, h6
+    +font-h
+    margin: 0
+    box-sizing: border-box
+    letter-spacing: 0.05rem
+
+  //img
+    width: 100%
+
+  a
+    text-decoration: none
+    color: $primary
+    // STOP SAFARI LINK BLINKING
+    -webkit-tap-highlight-color: transparent
+
+  i
+    speak: none
+    font-weight: normal
+    font-style: normal
+    /* Preferred icon size
+    font-size: 1.3rem
+    display: inline-block
+    line-height: 1
+    text-transform: none
+    letter-spacing: normal
+    word-wrap: normal
+    white-space: nowrap
+    direction: ltr
+    /* Support for IE.
+    font-feature-settings: 'liga'
+
+
+  /* PAGE WRAPPERS */
+  div.site-container
+
+    figure.hamburger
+      margin: 0
+      color: $primary
+      position: fixed
+      top: 0
+      left: 0
+      z-index: 1977
+      cursor: pointer
+      background-color: rgba($white, 0)
+      &.goodbye
+        transition: opacity 0.3s ease-in
+        opacity: 0
+
+      &.show
+        color: $white
+
+      &.scroll
+        background-color: rgba($white, 0.85)
+        transition: background-color 0.3s linear
+        width: 100vw
+
+      i
+        font-size: 1.5rem
+        padding: 8px
+
+    div.page-container
+      height: 100vh
+      overflow-y: auto
+      overflow-x: hidden
+      background-color: $white
+      opacity: 1
+      visibility: visible
+      will-change: opacity
+      transition: opacity 0.3s cubic-bezier(.39,.575,.565,1), visibility 0s linear
+      &.hide
+        opacity: 0
+        visibility: hidden
+        transition: opacity 0.3s cubic-bezier(.47,0,.745,.715), visibility 0s linear 0.3s
+        .embed-block .sqs-block-content
+          visibility: hidden !important
+      &.goodbye
+        transition: opacity 0.3s ease-in
+        opacity: 0
+
+
+// SCREEN > 62rem
+@media (min-width: 62rem)
+  body
