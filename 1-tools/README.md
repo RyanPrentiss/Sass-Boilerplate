@@ -1,4 +1,4 @@
 ###Clone###
 
-https://github.com/daneden/animate.css.git
-https://github.com/necolas/normalize.css.git
+git clone https://github.com/daneden/animate.css.git animate
+git clone https://github.com/necolas/normalize.css.git normalize
